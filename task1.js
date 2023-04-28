@@ -1,16 +1,15 @@
 export default function (data) {
   // your code starts here
-      const result = data.reduce((acc, currObj) => {
-    let currentObject = {};
 
-    currObj.usable.map((element) => {
-      currentObject[element] = currObj[element];
-    });
+    return data.map(person => {
+        const modification = person.usable.reduce((acc, currentElement) => {
+            acc[currentElement] = person[currentElement];
 
-    acc.push(currentObject);
-    return acc;
-  }, []);
+            return acc;
+        }, {})
 
-  return result;
+        return modification;
+    })
   // your code ends here
 }
+
