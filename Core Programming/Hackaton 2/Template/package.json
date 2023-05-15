@@ -1,0 +1,19 @@
+{
+  "name": "hackathon-2",
+  "version": "3.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "doc": "jsdoc array-utils.js"
+  },
+  "keywords": [],
+  "author": "Telerik Academy",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.39.0",
+    "eslint-config-google": "^0.14.0",
+    "jsdoc": "^3.6.3"
+  }
+}
