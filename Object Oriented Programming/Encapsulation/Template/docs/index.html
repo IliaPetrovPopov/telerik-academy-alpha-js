@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Home</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Board.html">Board</a></li><li><a href="Task.html">Task</a></li></ul><h3>Global</h3><ul><li><a href="global.html#status">status</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p></p>
+                    <h1>Home</h1>
+                </header>
+                
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><img src="https://webassets.telerikacademy.com/images/default-source/logos/telerik-academy.svg" alt="logo" width="300px" style="margin-top: 20px;"/>
+<h1>Boardr - Task organizing system</h1>
+<h3>1. Description</h3>
+<p>In its complete form, <em>Boardr</em> will be a system for creating, updating, organizing, and managing tasks, issues, and notes. The application will be built <strong>using the best practices for object-oriented design</strong> (OOD) and <strong>object-oriented programming</strong> (OOP).</p>
+<br>
+<h3>2. Project information</h3>
+<ul>
+<li>Language and version: <strong>JavaScript ES2020</strong></li>
+<li>Platform and version: <strong>Node 14.0+</strong></li>
+<li>Core Packages: <strong>ESLint</strong>, <strong>JSDoc</strong></li>
+</ul>
+<br>
+<h3>3. Goals</h3>
+<p>Today, we will start building the architecture of this system and improve upon the classes we designed in the previous exercise. The <strong>goal</strong> is to design a scalable architecture, <strong>encapsulate</strong> the state of the classes and apply <strong>validation</strong> to state changes.</p>
+<ul>
+<li>Working with classes - writing classes and creating instances of those classes.</li>
+<li>Modeling classes using <code>fields</code> (state) and <code>methods</code> (behavior).</li>
+<li>Protecting the state by making it private.</li>
+<li>Expose state via <strong>getters</strong> and <strong>setters</strong>.</li>
+<li>Apply validation to state changes inside <strong>setters</strong>.</li>
+<li>Writing basic code documentation using <strong>JSDoc</strong>.</li>
+</ul>
+<br>
+<h3>4. Setup</h3>
+<p>To get the project up and running, follow these steps:</p>
+<ol>
+<li>
+<p>Go inside the <code>Template</code> folder.</p>
+</li>
+<li>
+<p>Run <code>npm install</code> to restore all dependencies.</p>
+</li>
+<li>
+<p>After that, there are a few scripts you can run:</p>
+<ul>
+<li><code>npm run start</code> (shorthand: <code>npm start</code>) - Runs the <code>src/main.js</code> file.</li>
+<li><code>npm run lint</code> - Lints the code inside the <code>src</code> folder using <strong>ESLint</strong>.</li>
+<li><code>npm run docs</code> - Generates documentation in a <code>docs</code> folder using <strong>JSDoc</strong>.</li>
+<li><code>npm run test</code> (shorthand: <code>npm test</code> or <code>npm t</code>) - Runs the unit tests in the console.</li>
+<li><code>npm run test:browser</code> - Runs the unit tests in the browser in interactive mode.</li>
+</ul>
+</li>
+</ol>
+<br>
+<h3>5. Project architecture</h3>
+<p>When you take a look at the project structure you will notice that there are a couple of folders in <code>src</code> - the <code>models</code> folder which holds the model classes and the <code>common</code> folder where the <code>status</code> enum is placed. You will also notice that each file has the extension of the role it plays in the application - model files end with <code>.model.js</code> and enum files end with <code>.enum.js</code>. This is a convention we adhere to in order to make folder and file naming more declarative.</p>
+<p>You are provided yet again with the skeleton of the models and you need to implement all the missing functionality - this time following the rules of the <strong>encapsulation</strong> principle - all data (state) should be private and those parts of the state that need to be exposed to the outside world should do that through <strong>getters</strong> and <strong>setters</strong>, validating all values before changes are made to the state. This is a necessary step because we want to keep our model instances in a valid state throughout their lifecycle in the application.</p>
+<br>
+<h3>6. The <code>Task</code> model</h3>
+<p>The <code>Task</code> model should hold three pieces of information - the <code>name</code> of the task, the <code>dueDate</code> and the <code>status</code>. These fields need to be private to the class and you can see they have already been declared</p>
+<pre class="prettyprint source lang-js"><code>export class Task {
+  #name;
+  #dueDate;
+  #status;
+
+  // rest of the model
+}
+</code></pre>
+<p>However, those fields have no value - they need to be initialized during instance <em>construction</em>.</p>
+<p>In order to expose those fields to the outer world (outside the class) you need to define <strong>getters</strong> and <strong>setters</strong> for the following properties:</p>
+<ul>
+<li><code>name</code> - It should never be <strong>null, undefined or an empty string</strong>, its length should be between <strong>6 and 20 characters</strong></li>
+<li><code>dueDate</code> - The date of the deadline. Think of what validation will be needed here.</li>
+<li><code>status</code> - The task's status should be one of the three <code>TODO</code>, <code>IN_PROGRESS</code>, or <code>DONE</code>. Think of what is the best way to represent the value and its type. The status can only be changed through the <code>reset</code>, <code>advance</code> and <code>complete</code> methods. Think of what is needed to achieve this.</li>
+</ul>
+<p>Changing the value of the fields should throw an error if the new value is invalid.</p>
+<p>The following methods should also be implemented:</p>
+<ul>
+<li><code>reset()</code> - It should set the status of the task to <code>TODO</code></li>
+<li><code>advance()</code> - It should set the status of the task to <code>IN_PROGRESS</code></li>
+<li><code>complete()</code> - It should set the status of the task to <code>DONE</code></li>
+</ul>
+<p>You have been provided with the implementation of the <code>toString()</code> method for convenience.</p>
+<br>
+<h3>7. The <code>Board</code> model</h3>
+<p>The <code>Board</code> model should hold only one thing in its state - the array of all tasks added to the board. This field should be private to the class and exposed through a <strong>getter</strong>. Because the array is a reference type we can make changes to it and <em>mutate</em> it from outside the class once be obtain a reference to it. Think of a way to avoid that.</p>
+<p>The <code>Board</code> model should have the following properties:</p>
+<ul>
+<li><code>tasks</code> - The array of tasks added to the board. We should not be able to mutate the array from outside the class.</li>
+<li><code>taskCount</code> - Should return the number of tasks in the array. We should not be able to change its value - only read it.</li>
+</ul>
+<p>The following methods should also be implemented:</p>
+<ul>
+<li><code>add(task)</code> - It should add a task to the list of tasks in the board. A single task can be added only once! It should validate if the value we want to add is an instance of the <code>Task</code> model and throw and error if it's not.</li>
+<li><code>remove(task)</code> - It should remove a task from the list of tasks. The board should not allow for a task to be removed if it's not in the list!</li>
+</ul>
+<p>You have been provided with the implementation of the <code>toString()</code> method for convenience.</p>
+<br>
+<h3>8. Unit tests</h3>
+<p>To help you with the validations and implementation of missing functionality you have been provided with unit tests, which test specific results of your code implementation. There are two ways to run the tests:</p>
+<ul>
+<li><code>npm run test</code> (shorthand <code>npm test</code> or <code>npm t</code>) - This will run the tests in the console</li>
+<li><code>npm run test:browser</code> - This will run the test in interactive mode in the browser where you can control when and how tests are run</li>
+</ul>
+<p>Unit test will provide you with feedback on what is working in your code and what is not (and why).</p>
+<br>
+<h3>9. Document the code</h3>
+<p>Document the code using the JSDoc syntax. Write a short description of what each <strong>field</strong> and <strong>method</strong> does. For example:</p>
+<pre class="prettyprint source lang-javascript"><code>/** Adds a new task to the board, only if it is valid.*/
+add(task) {
+  ....
+}
+</code></pre>
+<p>Then proceed to generate the <code>docs</code> folder using <code>npm run docs</code>.</p>
+<br>
+<h3>10. Testing the <code>Board</code> and the <code>Task</code> classes</h3>
+<p>You can paste the following sample code inside the <code>main.js</code> file. Running this code should produce the output shown below. Even if the outo:</p>
+<pre class="prettyprint source lang-javascript"><code>import { Board } from './models/board.model.js';
+import { Task } from './models/task.model.js';
+
+const newline = () => console.log('\n \x1b[35m* * * * *\x1b[37m \n');
+
+const board = new Board();
+
+const task1 = new Task('Validate fields', new Date('2022/09/03'));
+const task2 = new Task('Write unit tests', new Date('2022/09/04'));
+const task3 = new Task('Remove console.log', new Date('2022/09/05'));
+
+console.log(board.toString());
+
+newline();
+
+board.add(task1);
+board.add(task2);
+board.add(task3);
+
+task1.advance();
+task2.complete();
+
+console.log(board.toString());
+
+newline();
+
+board.remove(task3);
+
+console.log(task1.toString());
+
+newline();
+
+console.log('board.itemCount:', board.taskCount);
+</code></pre>
+<p>Sample output text:</p>
+<pre class="prettyprint source lang-text"><code>---Task Board---       
+
+Tasks:
+
+No tasks at the moment.
+
+ * * * * *      
+
+---Task Board---
+
+Tasks:
+
+Name: Validate fields
+Status: In progress
+Due: 9/3/2022 12:00:00 AM
+--------
+Name: Write unit tests
+Status: Done
+Due: 9/4/2022 12:00:00 AM
+--------
+Name: Remove console.log
+Status: Todo
+Due: 9/5/2022 12:00:00 AM
+
+ * * * * *
+
+Name: Validate fields
+Status: In progress
+Due: 9/3/2022 12:00:00 AM
+
+ * * * * *
+
+board.itemCount: 2
+</code></pre></article>
+    </section>
+
+
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>
