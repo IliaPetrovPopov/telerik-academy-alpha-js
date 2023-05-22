@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> models/task.model.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Board.html">Board</a></li><li><a href="Task.html">Task</a></li></ul><h3>Global</h3><ul><li><a href="global.html#status">status</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>models/task.model.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { status } from '../common/status.enum.js';
+
+/** The Task class holds all relevant data and behavior a task might have. */
+export class Task {
+  // One way to indicate that a field should not be touched is to put an underscore before its name.
+  // This won't prevent your colleges from directly interacting with it.
+  
+  /** Name of task. */
+  #name;
+  
+  /** Deadline for submission of task. */
+  #dueDate;
+
+  /** Status of task.*/
+  #status;
+
+  static #MAX_LENGTH = 20;
+  static #MIN_LENGTH = 6;
+  constructor(newName, newDate) {
+    this.name = newName;
+    this.dueDate = newDate;
+    this.reset();
+  }
+
+  /** Shows name of a task. */
+  get name() {
+    return this.#name;
+  }
+
+  /** Changes name of a task.*/
+  set name(value) {
+    if(!value) {
+      throw new Error('Invalid value!');
+    }
+
+    if(value.length &lt; Task.#MIN_LENGTH || value.length > Task.#MAX_LENGTH) {
+      throw new Error('The length of the value is either shorter or longer than the constrains!');
+    }
+
+    this.#name = value;
+  }
+
+  /** Shows the deadline for submission of a task.*/
+  get dueDate() {
+    return this.#dueDate;
+  }
+
+  /** Changes deadline for submission of a task */
+  set dueDate(date) {
+    if(!date) {
+      throw new Error('The input is incorrect!');
+    }
+
+    if(date.valueOf() &lt; new Date().valueOf()) {
+      throw new Error('You can\'t set the dueDate to past date!');
+    }
+
+    this.#dueDate = date;
+  }
+
+  /** Gets the status of a task*/
+  get status() {
+    return this.#status;
+  }
+  /** Sets the task status to TODO. */
+  reset() {
+    this.#status = status.TODO;
+  }
+
+  /** Sets the task status to IN_PROGRESS. */
+  advance() {
+    this.#status = status.IN_PROGRESS;
+  }
+
+  /** Sets the task status to DONE. */
+  complete() {
+    this.#status = status.DONE;
+  }
+
+  /** Transforms the task data into a formatted string 
+  * @returns {string} The formatted task.
+  */
+  toString() {
+    return `Name: ${this.#name}\n` + 
+           `Status: ${this.#status}\n` +
+           `Due: ${this.#dueDate.toLocaleDateString()} ${this.#dueDate.toLocaleTimeString()}`;
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>
