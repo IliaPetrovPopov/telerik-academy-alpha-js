@@ -52,4 +52,22 @@ export class Issue extends BoardItem {
         return this.#description;
     }
 
+    /**
+     * Sets the value of description to newDescription if it is valid.
+     */
+    set description(newDescription) {
+        if (!newDescription) {
+            throw new Error('Invalid value!');
+        }
+
+        if(typeof newDescription !== 'string') {
+            throw new Error('Type must always be string!');
+        }
+
+        if(newDescription.length < Issue.#MIN || newDescription.length > Issue.#MAX) {
+            throw new Error(`Length must be between ${Issue.#MIN} and ${Issue.#MAX}!`);
+        }
+
+        this.#description = newDescription;
+    }
 }
