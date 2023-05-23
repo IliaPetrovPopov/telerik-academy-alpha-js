@@ -70,4 +70,32 @@ export class Issue extends BoardItem {
 
         this.#description = newDescription;
     }
+
+    /** Sets the value of private property status to RAISED. */
+    reset() {
+        return this.#status = issueStatus.RAISED;
+    }
+
+    /** Sets the value of private property status to IN_REVIEW. */
+    advance() {
+        this.#status = issueStatus.IN_REVIEW;
+    }
+
+    /** Sets the value of private property status to RESOLVED. */
+    complete() {
+        this.#status = issueStatus.RESOLVED;
+        this.#resolvedOn = new Date();
+    }
+
+    /** Formats current issue to more readable string. 
+    * @returns {string} Formatted issue.
+    */
+    toString() {
+        return '* Issue *\n' +
+                `Name: ${this.name}\n` +
+                `Status: ${this.#status}\n` +
+                `Description: ${this.#description}\n` +
+                `Created on: ${this.#createdOn}\n` +
+                `Resolved on: ${this.#resolvedOn === null ? 'Not yet resolved' : this.#resolvedOn}\n`;
+    }
 }
