@@ -2,40 +2,32 @@ import { taskStatus } from '../../common/task-status.enum.js';
 import { BoardItem } from './board-item.model.js';
 
 export class Task extends BoardItem {
-  #name;
+  /** Date object, the date of the deadline. */
   #dueDate;
+
+  /** The task's status, which is readonly enum */
   #status;
 
+  /**
+   * Task's constructor.
+   * @param {string} name Name of the task.
+   * @param {Date} dueDate Date of the task.
+   */
   constructor(name, dueDate) {
     // Reuse base class constructor first
-    super();
+    super(name);
     // Set through the setters to validate fields
-    this.name = name;
     this.dueDate = dueDate;
     
     this.#status = taskStatus.TODO;
   }
 
-  get name() {
-    return this.#name;
-  }
-
-  set name(value) {
-    if (!value) {
-      throw new Error('Name not provided!');
-    }
-
-    if (value.length < 6 || value.length > 20) {
-      throw new Error('Name length not within constraints!');
-    }
-
-    this.#name = value;
-  }
-
+  /** Getter for the deadline, hold by dueDate. */
   get dueDate() {
     return this.#dueDate;
   }
 
+  /** Setter for the dueDate. */
   set dueDate(value) {
     if (!value) {
       throw new Error('Due date not provided!');
@@ -48,25 +40,33 @@ export class Task extends BoardItem {
     this.#dueDate = value;
   }
   
+  /** Getter for the status of current Task. */
   get status() {
     return this.#status;
   }
 
+  /** Sets the status of the task to TODO. */
   reset() {
     this.#status = taskStatus.TODO;
   }
 
+  /** Sets the status of the task to IN_PROGRESS. */
   advance() {
     this.#status = taskStatus.IN_PROGRESS;
   }
 
+  /** Sets the status of the task to DONE. */
   complete() {
     this.#status = taskStatus.DONE;
   }
 
+  /**
+   * Formats current task to more readable string. 
+   * @returns {string} The formatted task.
+   */
   toString() {
     return '* Task *\n' +
-           `Name: ${this.#name}\n` + 
+           `Name: ${this.name}\n` + 
            `Status: ${this.#status}\n` +
            `Due: ${this.#dueDate.toLocaleDateString()} ${this.#dueDate.toLocaleTimeString()}`;
   }
