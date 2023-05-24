@@ -72,4 +72,14 @@ export class Note extends BoardItem {
         this.#status = noteStatus.APPROVED;
     }
 
+    /**
+     * Transforms the note data into formatted string.
+     * @returns {string} The formatted note.
+     */
+    toString() {
+        return '* Note *\n' +
+                `Name: ${this.name}\n` +
+                `Status: ${this.#status}\n` +
+                `Description: ${this.#description}\n`;
+    }
 }
