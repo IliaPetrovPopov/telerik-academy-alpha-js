@@ -1,4 +1,5 @@
 import { Task } from './board-items/task.model.js';
+import { BoardItem } from './board-items/board-item.model.js';
 
 /** The Board class holds items */
 export class Board {

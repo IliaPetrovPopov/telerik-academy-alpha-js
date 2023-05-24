@@ -1,4 +1,5 @@
 import { BoardItem } from './board-item.model.js';
+import { noteStatus } from '../../common/note-status.enum.js';
 
 export class Note extends BoardItem {
     /** Description of note */

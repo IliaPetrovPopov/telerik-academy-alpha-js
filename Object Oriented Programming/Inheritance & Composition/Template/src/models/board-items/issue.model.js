@@ -1,5 +1,5 @@
-import { BoardItem } from './board-item.model';
-import { issueStatus } from '../../common/issue-status.enum';
+import { BoardItem } from './board-item.model.js';
+import { issueStatus } from '../../common/issue-status.enum.js';
 
 export class Issue extends BoardItem {
     /** The date when the issue was created. */
