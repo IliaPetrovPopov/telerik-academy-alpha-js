@@ -57,19 +57,19 @@ export class Note extends BoardItem {
         return this.#status;
     }
 
+    /** Sets the value of status to CREATED. */
     reset() {
-        this.#status = 
+        this.#status = noteStatus.CREATED;
     }
 
+    /** Sets the value of status to PENDING. */
     advance() {
-
+        this.#status = noteStatus.PENDING;
     }
 
+    /** Sets the value of status to APPROVED. */
     complete() {
-
+        this.#status = noteStatus.APPROVED;
     }
 
-    toString() {
-
-    }
 }
