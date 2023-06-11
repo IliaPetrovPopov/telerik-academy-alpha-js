@@ -1,0 +1,16 @@
+{
+  "name": "set-map-exercises",
+  "version": "1.0.0",
+  "description": "Telerik Academy Alpha Exercise",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "occurrences": "node \"tasks/01. count-occurrences.js\"",
+    "twosum": "node \"tasks/02. two-sum.js\"",
+    "coins": "node \"tasks/03. special-coins.js\"",
+    "isomorphic": "node \"tasks/04. isomorphic-strings.js\""
+  },
+  "type": "module",
+  "author": "Telerik Academy"
+}
