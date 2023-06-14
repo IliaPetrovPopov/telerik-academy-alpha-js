@@ -6,6 +6,19 @@ import { deepCompareObjects, formatObject } from './common/utils.js';
  * @returns {object} The deep copy
  */
 const deepCopy = (object) => {
+  if (object === null) {
+    return object; 
+  }
+  
+  let shallowCopy = Object.assign({}, object);
+
+  Object.keys(shallowCopy).forEach(key => {
+    if(typeof shallowCopy[key] === 'object'  && shallowCopy[key] !== null) {
+      shallowCopy[key] = deepCopy(shallowCopy[key]); 
+    }
+  });
+
+  return shallowCopy;
 };
 
 // Tests:
