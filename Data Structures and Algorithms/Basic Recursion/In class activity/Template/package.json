@@ -1,0 +1,15 @@
+{
+  "name": "linear-data-structures-exercises",
+  "version": "1.0.0",
+  "description": "Telerik Academy Alpha Exercise",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "reverse": "node \"01. reverse-array.js\"",
+    "deepcopy": "node \"02. deep-copy.js\"",
+    "solve": "node \"03. expression.js\""
+  },
+  "type": "module",
+  "author": "Telerik Academy"
+}
