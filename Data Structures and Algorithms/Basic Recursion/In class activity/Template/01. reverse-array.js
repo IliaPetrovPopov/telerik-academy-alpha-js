@@ -6,6 +6,16 @@ import { compareArrays, formatArray } from './common/utils.js';
  * @returns {array} The reversed array
  */
 const reverse = (array) => {
+  if(array.length <= 1) {
+    return array;
+  }
+
+  const firstElement = array.shift();  
+
+  reverse(array);
+  array.push(firstElement);
+  
+  return array;
 };
 
 // Tests:
