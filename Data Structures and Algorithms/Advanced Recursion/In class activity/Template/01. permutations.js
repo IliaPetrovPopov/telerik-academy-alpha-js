@@ -6,7 +6,23 @@ import { compareArrays, formatArray } from './common/utils.js';
  * @returns {array} The all possible permutations
  */
 const permutations = (string) => {
-  // your implementation:
+  const result = [];
+
+    if(string.length < 2) {
+      result.push(string); 
+      return result;
+    }
+
+    for(let i = 0; i < string.length; i++) {
+      const char = string[i];
+
+      const remaining = string.slice(0, i) + string.slice(i + 1);
+      const otherPermuts = permutations(remaining);
+
+      otherPermuts.map(permutation => result.push(char + permutation));
+    }
+
+    return result;
 };
 
 // Tests:
