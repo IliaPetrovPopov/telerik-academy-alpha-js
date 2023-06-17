@@ -1,0 +1,15 @@
+{
+  "name": "linear-data-structures-exercises",
+  "version": "1.0.0",
+  "description": "Telerik Academy Alpha Exercise",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "permutations": "node \"01. permutations.js\"",
+    "mergesort": "node \"02. merge-sort.js\"",
+    "maze": "node \"03. all-paths-through-maze.js\""
+  },
+  "type": "module",
+  "author": "Telerik Academy"
+}
