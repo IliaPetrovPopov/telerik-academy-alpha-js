@@ -1,12 +1,34 @@
 import { compareArrays, formatArray } from './common/utils.js';
 
+const sortHelper = (left, right) => {
+  const result = [];
+
+  while (left.length && right.length) {
+    if (left[0] > right[0]) {
+      result.push(right.shift());
+    } else {
+      result.push(left.shift());
+    }
+  }
+
+  return [...result, ...left, ...right];
+};
 /**
  * Sorts an array of numbers in an increasing order recursively by applying the Merge Sort algorithm
  * @param {array} numbers The array of numbers to sort
  * @returns {array} The sorted array
  */
 const mergeSort = (numbers) => {
-  // your implementation:
+  if (numbers.length <= 1) {
+    return numbers;
+  }
+
+  const middle = Math.floor(numbers.length / 2);
+
+  const leftPart = mergeSort(numbers.slice(0, middle));
+  const rightPart = mergeSort(numbers.slice(middle));
+
+  return sortHelper(leftPart, rightPart);
 };
 
 // Tests:
