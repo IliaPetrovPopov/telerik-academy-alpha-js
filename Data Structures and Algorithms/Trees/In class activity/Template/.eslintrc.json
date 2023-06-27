@@ -1,0 +1,23 @@
+// eslint-disable-next-line no-undef
+{
+	"env": {
+		"es2020": true,
+		"node": true,
+    "jest": true
+	},
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": 11,
+		"ecmaFeatures": {
+			"impliedStrict": true
+		}
+	},
+	"extends": "eslint:recommended",
+	"rules": {
+		"quotes": ["error", "single"],
+		"semi": ["error", "always"],
+		"comma-dangle": ["warn", "always-multiline"],
+		"max-classes-per-file": ["error", 1]
+	}
+}
