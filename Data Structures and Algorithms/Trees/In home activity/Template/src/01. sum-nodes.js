@@ -22,7 +22,11 @@ const root = {
 };
 
 const sumNodes = (root) => {
-  // code goes here
+  if (root === null) {
+    return 0;
+  }
+
+  return root.value + sumNodes(root.left) + sumNodes(root.right);
 };
 
 // should print 15

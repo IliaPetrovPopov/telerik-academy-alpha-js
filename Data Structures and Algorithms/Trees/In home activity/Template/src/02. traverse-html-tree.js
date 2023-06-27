@@ -49,7 +49,24 @@ const domTree = {
 };
 
 const dfs = (root, id) => {
+  if (root === null) return null;
+  if (root.id === id) return root;
 
+  // simpler code for depth-first traversal
+  // for each child: apply dfs
+  for (const child of root.children) {
+    const result = dfs(child, id);
+
+    // this check is necessary to not override 
+    // a previously found result with null
+    if (result !== null) {
+      // that's our node
+      return result;
+    }
+  }
+
+  // all iterations on all children are done - we found nothing:
+  return null;
 };
 
 
