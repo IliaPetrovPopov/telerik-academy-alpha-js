@@ -1,1 +1,6 @@
-### Trees are a data structures that link nodes in a parent/child relationship, in the sense that there're nodes that depend on or come off other nodes. Trees are formed by a root node (the first node on the tree), and all the nodes that come off that root are called children.
+## Theoritical Questions:
+
+* What is a Binary Tree?
+* What is BFS? Why would we use it for?
+* What is the difference between PostOrder, PreOrder, and InOrder DFS traversal?
+* What is a Binary Search Tree?
