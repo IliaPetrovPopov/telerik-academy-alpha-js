@@ -1,0 +1,41 @@
+section {
+    width: 590px;
+    outline: 1px auto gray;
+    padding: 9px 9px;
+}
+section #textinp {
+    padding: 0.2cm; 
+    height: 0.29cm;
+    width: 6.9cm;
+    outline-style: ridge;
+}
+section #dateinp {
+    padding: 0.061cm 0.5cm; 
+    outline-style: ridge;
+    margin-left: 0.5%;
+    margin-right: 1%;
+    height: 0.487cm;
+}
+
+section #push {
+
+    width: 2.7cm;
+    height: 0.8cm;
+    border-radius: 9px;
+    padding: 0.1cm 0.4cm;
+
+}
+#push:hover {
+    font-size: 15px;
+    color: white;
+    background-color:red;
+}
+section .todos {
+    flex-flow: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type="checkbox"]:checked + label{
+    font-weight: bold;
+    color: green;
+}
