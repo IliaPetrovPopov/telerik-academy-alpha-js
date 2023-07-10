@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Read all tasks",
+      "status": "done"
+    },
+    {
+      "id": 2,
+      "name": "Convert text to data readable from JavaScript",
+      "status": "pending"
+    },
+    {
+      "id": 3,
+      "name": "Separate tasks to 'pending' and 'done'",
+      "status": "done"
+    },
+    {
+      "id": 4,
+      "name": "Write pending tasks to 'tasks.pending.json' and done tasks to 'tasks.done.json', but do writing both files in parallel",
+      "status": "done"
+    },
+    {
+      "id": 5,
+      "name": "In case of any error handle the error and log it to 'default.log'",
+      "status": "pending"
+    },
+    {
+      "id": 6,
+      "name": "Have fun",
+      "status": "pending"
+    }
+  ]
+}
