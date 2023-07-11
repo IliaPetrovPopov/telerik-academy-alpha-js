@@ -12,7 +12,14 @@ export class FileHandler {
   read(filename = '') {
     filename = join(__dirname, '..', filename);
 
-    // missing implementation
+    return new Promise((resolve, reject) => {
+      fs.readFile(filename, (err, data) => {
+        if (err) return reject(err);
+
+        resolve(data.toString());
+      });
+
+    });
   }
 
   write(filename = '', data = '') {
