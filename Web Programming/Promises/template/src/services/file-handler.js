@@ -25,6 +25,11 @@ export class FileHandler {
   write(filename = '', data = '') {
     filename = join(__dirname, '..', filename);
 
-    // missing implementation
+    return new Promise((_, reject) => {
+      fs.writeFile(filename, data, { flag: 'a+' }, err => {
+        if (err) return reject(err);
+
+      });
+    });
   }
 }
