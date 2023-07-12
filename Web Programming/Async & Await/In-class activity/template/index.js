@@ -8,7 +8,7 @@ const handlingJsonFiles = async () => {
         const fileNames = ['ids-to-cities.json', 'ids-to-grades.json', 'ids-to-names.json'];
 
         for ( const fileName of fileNames) {
-            const fileData = await fs.readFile(`In class activity/template/data/${fileName}`, 'utf-8');
+            const fileData = await fs.readFile(`Web Programming/Async & Await/In-class activity/template/data/${fileName}`, 'utf-8');
 
             dataArr.push(JSON.parse(fileData));
         }
