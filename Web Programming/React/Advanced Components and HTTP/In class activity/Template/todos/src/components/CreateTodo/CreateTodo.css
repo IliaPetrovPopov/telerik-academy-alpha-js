@@ -1,0 +1,12 @@
+#create-todo-form {
+  border: 1px solid #bbbbbb;
+  border-radius: 4px;
+  background-color: #ffefc4;
+  padding: 25px;
+  margin: 5px;
+}
+
+#create-todo-form > label {
+  min-width: 90px;
+  display: inline-block;
+}
