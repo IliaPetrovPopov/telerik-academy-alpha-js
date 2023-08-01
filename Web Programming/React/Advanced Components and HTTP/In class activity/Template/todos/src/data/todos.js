@@ -1,7 +1,7 @@
-let id = 0;
+export let id = 0;
 export const nextId = () => id++;
 
-const todos = [
+const todosData = [
   {
     id: nextId(),
     name: 'Buy Milk',
@@ -22,4 +22,4 @@ const todos = [
   },
 ];
 
-export default todos;
+export default todosData;

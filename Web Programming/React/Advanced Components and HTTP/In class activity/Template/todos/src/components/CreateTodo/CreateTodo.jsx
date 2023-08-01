@@ -2,7 +2,7 @@ import './CreateTodo.css';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-const CreateTodo = ({ create }) => {
+const CreateTodo = ({ create, createSection}) => {
   const todo = {
     name: '',
     due: moment().format(`YYYY-M-D`),
@@ -26,7 +26,12 @@ const CreateTodo = ({ create }) => {
     }
 
     create(todo);
+    createSection(false);
   };
+
+  const cancelHandler = () => {
+    createSection(false);
+  }
 
   return (
     <div id="create-todo-form">
@@ -35,7 +40,7 @@ const CreateTodo = ({ create }) => {
       <label htmlFor="todo-date">Due date:</label> <input type="date" id="todo-date" onChange={(e) => updateTodoProp('due', e.target.value)} name="todo-date" /><br /><br />
       <label htmlFor="todo-status">Completed:</label> <input type="checkbox" id="todo-status" onChange={(e) => updateTodoProp('isDone', e.target.checked)} name="todo-status" /><br /><br />
       <button className="button" onClick={createTodo}>Create</button>
-      <button className="button cancel" onClick={() => alert(`You canceled todo creation!`)}>Cancel</button>
+      <button className="button cancel" onClick={cancelHandler}>Cancel</button>
     </div>
   );
 }
