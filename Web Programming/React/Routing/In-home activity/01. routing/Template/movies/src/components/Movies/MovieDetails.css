@@ -1,0 +1,16 @@
+.watchlist{
+  margin: 10px;
+  color: rgb(17, 203, 17)
+}
+
+.add-to-watchlist-icon{
+  color: gold
+}
+
+.add-to-watchlist{
+  margin: 10%;
+}
+
+.poster{
+  max-width: 300px;
+}
