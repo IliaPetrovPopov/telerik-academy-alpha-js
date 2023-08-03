@@ -1,0 +1,32 @@
+.watchlist{
+  margin: 10px;
+  color: rgb(17, 203, 17)
+}
+
+.add-to-watchlist-icon{
+  color: gold
+}
+
+.add-to-watchlist{
+  margin: 10%;
+}
+
+.poster{
+  max-width: 300px;
+  border: 2px solid black;
+}
+
+.movie-details {
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 1px;
+  box-shadow: gray 1px 1px;
+  align-items: center;
+}
+
+.movie-details:hover {
+  box-shadow: gray 5px 5px 5px 10px;
+}
